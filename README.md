@@ -41,8 +41,11 @@ npm install
 # 安装后端依赖
 cd server && npm install && cd ..
 
-# 生成 Prisma 客户端
+# 生成 Prisma 客户端（前端用）
 npx prisma generate
+
+# 生成 Prisma 客户端（后端用）
+cd server && npx prisma generate --schema=../prisma/schema.prisma && cd ..
 
 # 导入种子数据（行星、恒星、星座）
 npx prisma db seed
@@ -51,30 +54,30 @@ npx prisma db seed
 ### 配置环境变量
 
 ```bash
-# 复制环境变量文件
-cp .env .env.local
+# 复制前端环境变量文件
+cp .env.example .env
+# 复制后端环境变量文件
+cp server/.env.example server/.env
 ```
 
-编辑 `.env.local`，根据需要修改：
-- `DATABASE_URL` — SQLite 数据库路径（默认 `file:./dev.db`）
-- `API_URL` — 后端 API 地址（默认 `http://localhost:4000/api`）
-- `NEXTAUTH_SECRET` — 登录加密密钥
-- `NASA_API_KEY` — NASA API 密钥（可选，用于 APOD）
+编辑 `.env` 和 `server/.env`，根据需要修改配置。
 
 ### 启动
 
-需要同时启动后端和前端两个服务：
+需要同时启动后端和前端两个服务（两个终端不要关闭）：
 
 **终端 1 — 后端 API 服务（端口 4000）：**
 ```bash
 cd server
 npx tsx src/index.ts
 ```
+看到 `天文后端服务启动: http://localhost:4000` 即表示启动成功。
 
 **终端 2 — 前端页面服务（端口 3000）：**
 ```bash
 npm run dev
 ```
+看到 `Ready in x.xs` 即表示启动成功。
 
 浏览器打开 `http://localhost:3000` 即可访问。
 
