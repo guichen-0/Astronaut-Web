@@ -1,0 +1,297 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Auth Models (NextAuth v5) ───
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?
+  role          String    @default("USER")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accounts  Account[]
+  sessions  Session[]
+  favorites Favorite[]
+  notes     UserNote[]
+  starMapPresets StarMapPreset[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ─── Planet ───
+
+model Planet {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  englishName   String
+  planetType    String
+  diameterKm    Float?
+  massKg        String?
+  distanceFromSunAu Float?
+  orbitalPeriodDays   Float?
+  rotationPeriodHours Float?
+  numberOfMoons       Int     @default(0)
+  hasRings            Boolean @default(false)
+  temperatureMin      Int?
+  temperatureMax      Int?
+  atmosphereComposition String?
+  description     String
+  funFact         String?
+  imageUrl        String?
+  iconName        String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  moons Moon[]
+}
+
+model Moon {
+  id            String  @id @default(cuid())
+  name          String
+  planetId      String
+  diameterKm    Float?
+  massKg        String?
+  discoverer    String?
+  discoveryYear Int?
+  description   String?
+
+  planet Planet @relation(fields: [planetId], references: [id], onDelete: Cascade)
+
+  @@index([planetId])
+}
+
+// ─── Star ───
+
+model Star {
+  id                  String   @id @default(cuid())
+  name                String?
+  bayerDesignation    String?
+  flamsteedDesignation String?
+
+  hipId Int?   @unique
+  hdId  Int?   @unique
+  hrId  Int?   @unique
+
+  rightAscension    Float
+  declination       Float
+  apparentMagnitude Float
+  absoluteMagnitude Float?
+  colorIndexBv      Float?
+  distanceParsecs   Float?
+
+  spectralType String?
+  luminosity   Float?
+  temperatureK Int?
+  radiusSolar  Float?
+
+  constellationAbbreviation String?
+
+  x Float
+  y Float
+  z Float
+
+  description String?
+  imageUrl    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  constellation Constellation? @relation(fields: [constellationAbbreviation], references: [abbreviation])
+
+  @@index([apparentMagnitude])
+  @@index([constellationAbbreviation])
+}
+
+// ─── Constellation ───
+
+model Constellation {
+  id              String  @id @default(cuid())
+  name            String  @unique
+  abbreviation    String  @unique
+  genitive        String?
+  meaning         String?
+  season          String?
+  areaSqDeg       Float?
+  brightestStarId String?
+
+  description  String
+  mythos       String?
+  imageUrl     String?
+  imageCredit  String?
+
+  boundaryJson String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  stars Star[]
+}
+
+// ─── Article ───
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  summary     String?
+  content     String
+  imageUrl    String?
+  sourceUrl   String   @unique
+  sourceName  String
+  author      String?
+  publishedAt DateTime?
+  crawledAt   DateTime @default(now())
+  isFeatured  Boolean  @default(false)
+
+  categoryId String?
+  category   ArticleCategory? @relation(fields: [categoryId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([publishedAt])
+  @@index([sourceName])
+}
+
+model ArticleCategory {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  articles    Article[]
+}
+
+// ─── CelestialEvent ───
+
+model CelestialEvent {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  eventType   String
+  startDate   DateTime
+  endDate     DateTime?
+  peakDate    DateTime?
+  visibility  String?
+
+  relatedEntityType String?
+  relatedEntityId   String?
+
+  imageUrl  String?
+  sourceUrl String?
+
+  createdAt DateTime @default(now())
+
+  @@index([startDate])
+  @@index([eventType])
+}
+
+// ─── User Content ───
+
+model Favorite {
+  id         String   @id @default(cuid())
+  userId     String
+  entityType String
+  entityId   String
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, entityType, entityId])
+  @@index([entityType, entityId])
+}
+
+model UserNote {
+  id         String   @id @default(cuid())
+  userId     String
+  entityType String
+  entityId   String
+  title      String   @default("")
+  content    String
+  isPublic   Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, entityType])
+}
+
+// ─── Star Map ───
+
+model StarMapPreset {
+  id        String   @id @default(cuid())
+  userId    String?
+  name      String
+  config    String
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ─── Crawler ───
+
+model CrawlSource {
+  id                   String   @id @default(cuid())
+  name                 String   @unique
+  baseUrl              String   @unique
+  feedUrl              String?
+  categoryId           String?
+  crawlIntervalMinutes Int      @default(360)
+  lastCrawledAt        DateTime?
+  isActive             Boolean  @default(true)
+  userAgent            String   @default("AstronomyWebBot/1.0")
+  robotsCache          String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

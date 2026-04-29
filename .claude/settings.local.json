@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm info *)",
+      "Bash(npx create-next-app@14 . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Read(//f/360MoveData/Users/Administrator/Desktop/**)",
+      "Bash(npx create-next-app@14 astronaut-web-tmp --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(cp -r \"f:/360MoveData/Users/Administrator/Desktop/astronaut-web-tmp/\"* \"f:/360MoveData/Users/Administrator/Desktop/Astronaut Web/\")",
+      "Bash(cp \"f:/360MoveData/Users/Administrator/Desktop/astronaut-web-tmp/\".* \"f:/360MoveData/Users/Administrator/Desktop/Astronaut Web/\")",
+      "Bash(rm -rf \"f:/360MoveData/Users/Administrator/Desktop/astronaut-web-tmp\")"
+    ]
+  }
+}

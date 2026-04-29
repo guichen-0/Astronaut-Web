@@ -1,0 +1,19 @@
+[
+  {"name":"月球","planetSlug":"earth","diameterKm":3474,"massKg":"7.342e22","discoverer":"—","discoveryYear":null,"description":"地球唯一的天然卫星，表面布满陨石坑。"},
+  {"name":"火卫一（福波斯）","planetSlug":"mars","diameterKm":22,"massKg":"1.0659e16","discoverer":"Asaph Hall","discoveryYear":1877,"description":"火星较大的卫星，形状不规则，表面有巨大的斯蒂克尼陨石坑。"},
+  {"name":"火卫二（德摩斯）","planetSlug":"mars","diameterKm":12,"massKg":"1.4762e15","discoverer":"Asaph Hall","discoveryYear":1877,"description":"火星较小的卫星，形状不规则。"},
+  {"name":"伊奥","planetSlug":"jupiter","diameterKm":3643,"massKg":"8.9319e22","discoverer":"Galileo Galilei","discoveryYear":1610,"description":"木星最内侧的伽利略卫星，拥有太阳系中最活跃的火山活动。"},
+  {"name":"欧罗巴","planetSlug":"jupiter","diameterKm":3122,"massKg":"4.7998e22","discoverer":"Galileo Galilei","discoveryYear":1610,"description":"木星的伽利略卫星之一，冰壳下方可能存在液态海洋。"},
+  {"name":"加尼美德","planetSlug":"jupiter","diameterKm":5268,"massKg":"1.4819e23","discoverer":"Galileo Galilei","discoveryYear":1610,"description":"太阳系中最大的卫星，比水星还大，拥有自己的磁场。"},
+  {"name":"卡利斯托","planetSlug":"jupiter","diameterKm":4821,"massKg":"1.0759e23","discoverer":"Galileo Galilei","discoveryYear":1610,"description":"木星的伽利略卫星之一，表面布满陨石坑，是太阳系中最古老的表面之一。"},
+  {"name":"土卫一（米玛斯）","planetSlug":"saturn","diameterKm":396,"massKg":"3.7493e19","discoverer":"William Herschel","discoveryYear":1789,"description":"土星最小的大卫星，表面有一个巨大的赫歇尔陨石坑，形似死星。"},
+  {"name":"土卫二（恩克拉多斯）","planetSlug":"saturn","diameterKm":504,"massKg":"1.0802e20","discoverer":"William Herschel","discoveryYear":1789,"description":"土星的冰冻卫星，南极地区有活跃的冰喷泉，冰壳下可能存在液态海洋。"},
+  {"name":"土卫三（特提斯）","planetSlug":"saturn","diameterKm":1062,"massKg":"6.1745e20","discoverer":"Giovanni Cassini","discoveryYear":1684,"description":"土星的中型卫星，表面有巨大的奥德赛陨石坑和伊萨卡峡谷。"},
+  {"name":"土卫四（狄俄涅）","planetSlug":"saturn","diameterKm":1123,"massKg":"1.0955e21","discoverer":"Giovanni Cassini","discoveryYear":1684,"description":"土星的冰质卫星，表面有明亮的冰崖和陨石坑。"},
+  {"name":"土卫五（瑞亚）","planetSlug":"saturn","diameterKm":1528,"massKg":"2.3065e21","discoverer":"Giovanni Cassini","discoveryYear":1672,"description":"土星的第二大卫星，表面有明亮的条纹区域。"},
+  {"name":"土卫六（泰坦）","planetSlug":"saturn","diameterKm":5150,"massKg":"1.3452e23","discoverer":"Christiaan Huygens","discoveryYear":1655,"description":"土星最大的卫星，拥有浓厚的大气层和液态甲烷湖泊，是太阳系中最像地球的天体之一。"},
+  {"name":"土卫八（伊阿珀托斯）","planetSlug":"saturn","diameterKm":1469,"massKg":"1.8056e21","discoverer":"Giovanni Cassini","discoveryYear":1671,"description":"土星的奇特卫星，一面极黑一面极白，赤道有环形山脊。"},
+  {"name":"天卫三（泰坦尼亚）","planetSlug":"uranus","diameterKm":1578,"massKg":"3.527e21","discoverer":"William Herschel","discoveryYear":1787,"description":"天王星最大的卫星，表面有峡谷和陨石坑。"},
+  {"name":"天卫四（欧贝隆）","planetSlug":"uranus","diameterKm":1523,"massKg":"3.014e21","discoverer":"William Herschel","discoveryYear":1787,"description":"天王星的第二大卫星，表面有暗色撞击坑。"},
+  {"name":"海卫一（特里同）","planetSlug":"neptune","diameterKm":2707,"massKg":"2.14e22","discoverer":"William Lassell","discoveryYear":1846,"description":"海王星最大的卫星，具有逆向公转轨道，表面有氮冰间歇泉。"}
+]

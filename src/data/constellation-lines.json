@@ -1,0 +1,212 @@
+[
+  {
+    "constellation": "UMA",
+    "lines": [
+      {
+        "fromName": "北斗一",
+        "toName": "北斗三"
+      },
+      {
+        "fromName": "北斗三",
+        "toName": "北斗四"
+      },
+      {
+        "fromName": "北斗四",
+        "toName": "北斗五"
+      },
+      {
+        "fromName": "北斗五",
+        "toName": "北斗六"
+      },
+      {
+        "fromName": "北斗六",
+        "toName": "北斗七"
+      },
+      {
+        "fromName": "北斗一",
+        "toName": "北斗四"
+      }
+    ]
+  },
+  {
+    "constellation": "Ori",
+    "lines": [
+      {
+        "fromName": "参宿四",
+        "toName": "参宿五"
+      },
+      {
+        "fromName": "参宿五",
+        "toName": "参宿七"
+      },
+      {
+        "fromName": "参宿七",
+        "toName": "参宿六"
+      },
+      {
+        "fromName": "参宿六",
+        "toName": "参宿四"
+      },
+      {
+        "fromName": "参宿一",
+        "toName": "参宿二"
+      },
+      {
+        "fromName": "参宿二",
+        "toName": "参宿三"
+      },
+      {
+        "fromName": "参宿一",
+        "toName": "参宿四"
+      },
+      {
+        "fromName": "参宿三",
+        "toName": "参宿六"
+      }
+    ]
+  },
+  {
+    "constellation": "Cyg",
+    "lines": [
+      {
+        "fromName": "天津四",
+        "toName": "天津一"
+      },
+      {
+        "fromName": "天津一",
+        "toName": "天津二"
+      },
+      {
+        "fromName": "天津四",
+        "toName": "辇道增七"
+      }
+    ]
+  },
+  {
+    "constellation": "Leo",
+    "lines": [
+      {
+        "fromName": "轩辕十四",
+        "toName": "β Leo"
+      },
+      {
+        "fromName": "β Leo",
+        "toName": "太微右垣一"
+      }
+    ]
+  },
+  {
+    "constellation": "Sco",
+    "lines": [
+      {
+        "fromName": "心宿二",
+        "toName": "房宿三"
+      },
+      {
+        "fromName": "房宿三",
+        "toName": "尾宿八"
+      },
+      {
+        "fromName": "尾宿八",
+        "toName": "尾宿九"
+      }
+    ]
+  },
+  {
+    "constellation": "Tau",
+    "lines": [
+      {
+        "fromName": "毕宿五",
+        "toName": "昴宿六"
+      },
+      {
+        "fromName": "昴宿六",
+        "toName": "昴宿七"
+      }
+    ]
+  },
+  {
+    "constellation": "Peg",
+    "lines": [
+      {
+        "fromName": "危宿三",
+        "toName": "室宿二"
+      },
+      {
+        "fromName": "室宿二",
+        "toName": "壁宿一"
+      },
+      {
+        "fromName": "壁宿一",
+        "toName": "危宿三"
+      }
+    ]
+  },
+  {
+    "constellation": "CMA",
+    "lines": [
+      {
+        "fromName": "天狼星",
+        "toName": "天狼星增一"
+      },
+      {
+        "fromName": "天狼星增一",
+        "toName": "天狼星增二"
+      }
+    ]
+  },
+  {
+    "constellation": "Gem",
+    "lines": [
+      {
+        "fromName": "北河三",
+        "toName": "北河二"
+      }
+    ]
+  },
+  {
+    "constellation": "And",
+    "lines": [
+      {
+        "fromName": "奎宿九",
+        "toName": "壁宿二"
+      }
+    ]
+  },
+  {
+    "constellation": "Ari",
+    "lines": [
+      {
+        "fromName": "娄宿三",
+        "toName": "娄宿一"
+      }
+    ]
+  },
+  {
+    "constellation": "Aql",
+    "lines": [
+      {
+        "fromName": "河鼓二",
+        "toName": "牛郎星西"
+      }
+    ]
+  },
+  {
+    "constellation": "Cru",
+    "lines": [
+      {
+        "fromName": "十字架二",
+        "toName": "十字架三"
+      }
+    ]
+  },
+  {
+    "constellation": "Oph",
+    "lines": [
+      {
+        "fromName": "候",
+        "toName": "天市左垣二"
+      }
+    ]
+  }
+]
